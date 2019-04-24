@@ -1,0 +1,39 @@
+#!/bin/bash
+
+#HTML system info. page
+TITLE="System Information Page for $HOSTNAME"
+CURRENT_TIME=$(date +"%x %r %Z")
+TIMESTAMP="Generated $CURRENT_TIME by $USER"
+
+report_uptime () {
+    echo "function report_uptime executed"
+    return
+}
+
+report_disk_space () {
+    echo "function report_disk_space executed"
+    return
+}
+
+report_home_space () {
+    echo "function _home_space executed"
+    return
+}
+
+cat << _EOF_
+
+    <HTML>
+        <head>
+             <title>
+                $TITLE
+            </title>
+        </head>
+        <body>
+            <h1>$TITLE</h1>
+            <p>$TIMESTAMP</p>
+            $(report_uptime)
+            $(report_disk_space)
+            $(report_home_space)
+        </body>
+        </HTML>
+_EOF_
